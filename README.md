@@ -4,8 +4,8 @@ This repository contains a Django REST API for student and subject information a
 
 ## API Endpoints
 
-1. `/students` - Returns a list of 10 students with their names and enrolled programs
-2. `/subjects` - Returns all subjects for the Software Engineering program grouped by academic year
+1. `api/students` - Returns a list of 10 students with their names and enrolled programs
+2. `api/subjects` - Returns all subjects for the Software Engineering program grouped by academic year
 
 ## Setup Instructions
 
