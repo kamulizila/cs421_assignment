@@ -8,15 +8,15 @@ class Command(BaseCommand):
         # Students data
         students = [
             {'name': 'Kamuli zila', 'program': 'Software Engineering'},
-            {'name': 'Jane Smith', 'program': 'Computer Science'},
-            {'name': 'Michael Johnson', 'program': 'Software Engineering'},
-            {'name': 'Emily Davis', 'program': 'Information Technology'},
-            {'name': 'Robert Brown', 'program': 'Software Engineering'},
-            {'name': 'Sarah Wilson', 'program': 'Computer Science'},
-            {'name': 'David Taylor', 'program': 'Software Engineering'},
-            {'name': 'Jessica Anderson', 'program': 'Information Technology'},
-            {'name': 'Thomas Martinez', 'program': 'Software Engineering'},
-            {'name': 'Lisa Robinson', 'program': 'Computer Science'},
+            {'name': 'Joseph Smith', 'program': 'Computer Science'},
+            {'name': 'Michael Hamis', 'program': 'Software Engineering'},
+            {'name': 'Elia Davis', 'program': 'Information Technology'},
+            {'name': 'Robson Brown', 'program': 'Software Engineering'},
+            {'name': 'Sarah Huja', 'program': 'Computer Science'},
+            {'name': 'Daniel Mihayo', 'program': 'Software Engineering'},
+            {'name': 'Jessica Mwita', 'program': 'Information Technology'},
+            {'name': 'Thomas Petro', 'program': 'Software Engineering'},
+            {'name': 'Lilian John', 'program': 'Computer Science'},
         ]
 
         # Subjects data
