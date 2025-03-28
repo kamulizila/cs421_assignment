@@ -66,7 +66,9 @@ ROOT_URLCONF = 'cs421_assignment.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        # 'DIRS': [],
+        # 'DIRS': [os.path.join(BASE_DIR, 'university')],
+        'DIRS': [BASE_DIR / "university"],  # Add this line
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
