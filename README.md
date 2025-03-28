@@ -10,9 +10,10 @@ This repository contains a Django REST API for student and subject information a
 2. `http://54.175.59.76:8000/api/subjects/` - Returns all subjects for the Software Engineering program grouped by academic year
 
 ## Requirements
-pytest==7.4.0
-black==23.12.0
-django-debug-toolbar==4.2.0
+
+1. pytest==7.4.0
+2. black==23.12.0
+3. django-debug-toolbar==4.2.0
 
 ### Prerequisites
 - Python 3.8+
