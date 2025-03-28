@@ -6,8 +6,8 @@ This repository contains a Django REST API for student and subject information a
 
 ## API Endpoints
 
-1. `http://54.175.59.76:8000/api/students/` - Returns a list of 10 students with their names and enrolled programs
-2. `http://54.175.59.76:8000/api/subjects/` - Returns all subjects for the Software Engineering program grouped by academic year
+1. `http://ec2-54-175-59-76.compute-1.amazonaws.com/api/students/` - Returns a list of 10 students with their names and enrolled programs
+2. `http://ec2-54-175-59-76.compute-1.amazonaws.com/api/subjects/` - Returns all subjects for the Software Engineering program grouped by academic year
 
 ## Requirements
 
