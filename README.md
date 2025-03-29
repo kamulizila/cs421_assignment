@@ -1,26 +1,38 @@
-# CS 421 Assignment 1
-#Build and deploy a simple API using your preferred programming language(Python) and relational 
-database management system (Postgres).
+# CS 421 Assignment 1 - Build and Deploy a Simple API
 
-This repository contains a Django REST API for student and subject information as required by the CS 421 assignment.
+This repository contains a Django REST API that provides student and subject information for the CS 421 assignment.
 
 ## API Endpoints
 
-1. `http://ec2-54-175-59-76.compute-1.amazonaws.com/api/students/` - Returns a list of 10 students with their names and enrolled programs
-2. `http://ec2-54-175-59-76.compute-1.amazonaws.com/api/subjects/` - Returns all subjects for the Software Engineering program grouped by academic year
+1. `http://ec2-54-175-59-76.compute-1.amazonaws.com/api/students/` - Returns a list of 10 students with their names and enrolled programs.
+2. `http://ec2-54-175-59-76.compute-1.amazonaws.com/api/subjects/` - Returns all subjects for the Software Engineering program grouped by academic year.
 
 ## Requirements
 
-1. pytest==7.4.0
-2. black==23.12.0
-3. django-debug-toolbar==4.2.0
+1. `pytest==7.4.0`
+2. `black==23.12.0`
+3. `django-debug-toolbar==4.2.0`
+4. `Django==4.2.0`
+5. `djangorestframework==3.14.0`
+6. `psycopg2==2.9.6` (PostgreSQL adapter for Python)
 
 ### Prerequisites
-- Python 3.8+
-- SQLite (included with Python)
+
+- Python 3.8 or higher
+- PostgreSQL database
+- Virtual environment (optional but recommended)
 
 ### Installation
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/kamulizila/cs421_assignment.git
-   cd cs421-django-assignment
+python3 -m venv venv
+source venv/bin/activate 
+pip install -r requirements.txt
+
+
+
+#### Step 1: Clone the repository
+
+Clone the repository from GitHub to your local machine or server:
+
+```bash
+git clone https://github.com/kamulizila/cs421_assignment.git
+cd cs421_assignment
