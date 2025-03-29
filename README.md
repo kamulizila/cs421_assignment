@@ -22,12 +22,12 @@ This repository contains a Django REST API that provides student and subject inf
 - Virtual environment (optional but recommended)
 
 ### Installation
-python3 -m venv venv
-source venv/bin/activate 
-pip install -r requirements.txt
-pip install pytest==7.4.0 black==23.12.0 django-debug-toolbar==4.2.0 djangorestframework==3.14.0 psycopg2==2.9.6
-sudo apt update
-sudo apt install postgresql postgresql-contrib
+1.python3 -m venv venv
+2.source venv/bin/activate 
+3.pip install -r requirements.txt
+4.pip install pytest==7.4.0 black==23.12.0 django-debug-toolbar==4.2.0 djangorestframework==3.14.0 psycopg2==2.9.6
+5.sudo apt update
+6.sudo apt install postgresql postgresql-contrib
 
 #### Step 1: Clone the repository
 
