@@ -26,19 +26,11 @@ SECRET_KEY = 'django-insecure-36d(%pbxqu@2p5acrp^nb_&y=33w&_+9$9)+hyw$5v(85l8=mo
 DEBUG = True
 
 ALLOWED_HOSTS = [
-<<<<<<< HEAD
+    
     '54.175.59.76',       # The EC2 public IP
     'localhost',          # For local testing
     '127.0.0.1',         # For local testing
 ]
-=======
-    '54.175.59.76',       # Your EC2 public IP
-    'localhost',          # For local testing
-    '127.0.0.1',         # For local testing
-    'ec2-54-175-59-76.compute-1.amazonaws.com'
-]
-
->>>>>>> 80cf329 (Initial commit)
 
 # Application definition
 
