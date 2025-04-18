@@ -2,7 +2,7 @@
 
 # Define variables
 LOG_FILE="/var/log/update.log"
-API_DIR="/var/www/cs421_assignment"
+API_DIR="/home/ubuntu/cs421_assignment"
 
 # Create log directory if it doesn't exist
 mkdir -p "$(dirname "$LOG_FILE")"

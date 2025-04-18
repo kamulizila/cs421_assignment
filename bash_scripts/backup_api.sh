@@ -1,10 +1,9 @@
-#!/bin/bash
+#!/bin/bash 
 
 # Define variables
-LOG_FILE="/var/log/backup.log"
-TIMESTAMP=$(date "+%Y-%m-%d %H:%M:%S")
+LOG_FILE="/home/ubuntu/cs421_assignment/logs/backup.log"
 BACKUP_DIR="/home/ubuntu/backups"
-API_DIR="/var/www/cs421_assignment"
+API_DIR="/home/ubuntu/cs421_assignment"
 DB_USER="postgres"
 DB_NAME="api_db"
 
@@ -14,7 +13,7 @@ mkdir -p "$(dirname "$LOG_FILE")"
 
 # Function to log messages
 log() {
-    echo "[$TIMESTAMP] $1" >> "$LOG_FILE"
+    echo "[$(date '+%Y-%m-%d %H:%M:%S')] $1" >> "$LOG_FILE"
 }
 
 log "Starting backup process..."
@@ -37,7 +36,7 @@ fi
 # Backup database (PostgreSQL)
 DB_BACKUP_FILE="$BACKUP_DIR/db_backup_$(date +%F).sql"
 if command -v pg_dump >/dev/null 2>&1; then
-    # Read password securely (better than having it in the script)
+    # Read password securely
     read -s -p "Enter PostgreSQL password for $DB_USER: " DB_PASS
     echo
     
@@ -46,7 +45,7 @@ if command -v pg_dump >/dev/null 2>&1; then
     else
         log "WARNING: Failed to create database backup (check credentials or connection)"
     fi
-    
+
     # Clear the password variable
     unset DB_PASS
 else

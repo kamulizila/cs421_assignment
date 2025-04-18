@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Define log file
-LOG_FILE="/var/log/server_health.log"
+LOG_FILE="/home/ubuntu/logs/server_health.log"
 TIMESTAMP=$(date "+%Y-%m-%d %H:%M:%S")
 
 # Create log directory if it doesn't exist
@@ -29,21 +29,24 @@ check_resources() {
     log "Disk Usage: ${DISK_USAGE}%"
     
     # Check if web server is running
-    if systemctl is-active --quiet nginx || systemctl is-active --quiet apache2; then
+    if (command -v systemctl >/dev/null 2>&1) && 
+       (systemctl is-active --quiet nginx || systemctl is-active --quiet apache2); then
         log "Web server is running"
     else
         log "WARNING: Web server is not running!"
     fi
     
     # Check if resources are critical
-    if (( $(echo "$CPU_USAGE > 80" | bc -l) )); then
+    CPU_INT=${CPU_USAGE%.*}
+    if [ "$CPU_INT" -gt 80 ]; then
         log "WARNING: High CPU usage detected!"
     fi
-    
-    if (( $(echo "$MEM_USAGE > 80" | bc -l) )); then
+
+    MEM_INT=${MEM_USAGE%.*}
+    if [ "$MEM_INT" -gt 80 ]; then
         log "WARNING: High memory usage detected!"
     fi
-    
+
     if [ "$DISK_USAGE" -gt 90 ]; then
         log "CRITICAL: Disk space is critically low!"
     fi
@@ -52,7 +55,7 @@ check_resources() {
 # Function to check API endpoints
 check_api() {
     local endpoints=("/api/students" "/api/subjects")
-    local base_url="http://localhost"  # Changed to localhost for security
+    local base_url="http://ec2-54-175-59-76.compute-1.amazonaws.com"
     
     log "Checking API endpoints..."
     
@@ -66,6 +69,7 @@ check_api() {
         fi
     done
 }
+
 
 # Main execution
 log "Starting health check..."
