@@ -1,3 +1,25 @@
+# CS 421 Assignment 2 - Bash Scripts for Server Management
+### Scripts Overview
+
+1. **health_check.sh**
+   - Purpose: Monitors server resources (CPU, memory, disk) and API endpoints
+   - Dependencies: curl, web server (Apache/Nginx)
+   - Setup: `chmod +x health_check.sh`
+   - Run: `./health_check.sh`
+
+2. **backup_api.sh**
+   - Purpose: Creates backups of API files and database
+   - Dependencies: tar, gzip, mysqldump (if using MySQL)
+   - Setup: `chmod +x backup_api.sh`
+   - Run: `./backup_api.sh`
+
+3. **update_server.sh**
+   - Purpose: Updates system packages and API code
+   - Dependencies: git, apt
+   - Setup: `chmod +x update_server.sh`
+   - Run: `./update_server.sh`
+  
+   
 # CS 421 Assignment 1 - Build and Deploy a Simple API
 
 This repository contains a Django REST API that provides student and subject information for the CS 421 assignment.
