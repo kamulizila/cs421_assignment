@@ -27,14 +27,13 @@ check_resources() {
     # Check Disk space
     DISK_USAGE=$(df -h / | awk 'NR==2 {print $5}' | tr -d '%')
     log "Disk Usage: ${DISK_USAGE}%"
-      # Check if web server is running
-  # Check if web server service is running
-if (command -v systemctl >/dev/null 2>&1) &&
-   (systemctl is-active --quiet nginx || systemctl is-active --quiet apache2); then
-    log "Web server service is running"
-else
-    log "WARNING: Web server service is not running!"
-fi
+    
+     # Check if Nginx is running
+    if systemctl is-active --quiet nginx; then
+        log "Web server service (nginx) is running"
+    else
+        log "WARNING: Web server service (nginx) is not running!"
+    fi
 
 # Check if public web server is responding
 if curl --silent --fail --head http://ec2-54-175-59-76.compute-1.amazonaws.com/ >/dev/null; then

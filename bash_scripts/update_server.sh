@@ -54,21 +54,21 @@ fi
 log "GitHub repository updated successfully"
 
 # Restart web server
-log "Attempting to restart web server"
-if systemctl is-active --quiet apache2; then
-    if ! systemctl restart apache2 >> "$LOG_FILE" 2>&1; then
-        log "ERROR: Failed to restart Apache"
-        exit 1
-         fi
-    log "Apache restarted successfully"
-elif systemctl is-active --quiet nginx; then
+if systemctl is-active --quiet nginx; then
     if ! systemctl restart nginx >> "$LOG_FILE" 2>&1; then
         log "ERROR: Failed to restart Nginx"
         exit 1
     fi
     log "Nginx restarted successfully"
+elif systemctl is-active --quiet apache2; then
+    if ! systemctl restart apache2 >> "$LOG_FILE" 2>&1; then
+        log "ERROR: Failed to restart Apache"
+        exit 1
+    fi
+    log "Apache restarted successfully"
 else
     log "WARNING: No active web server (Apache or Nginx) found"
 fi
+
 
 log "Update process completed successfully"
