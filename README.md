@@ -31,7 +31,7 @@ b). Efficient for systems with frequent small changes.
 
 c). Minimizes backup time and system load.
 
-3.Differential Backup
+3. Differential Backup
 
 How it works:
 
@@ -53,7 +53,7 @@ http://ec2-54-175-59-76.compute-1.amazonaws.com/api/students/ - Returns a list o
 http://ec2-54-175-59-76.compute-1.amazonaws.com/api/subjects/ - Returns all subjects for the Software Engineering program grouped by academic year.
 
 
-Cron Job Setup
+Cron Job Setup(crontab -l)
 
 0 */6 * * * | /home/ubuntu/cs421_assignment/bash_scripts/health_check.sh -> Runs every 6 hours to log server health
 
