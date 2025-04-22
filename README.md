@@ -2,30 +2,42 @@
 
 To explain different backup schemes and how each is executed, including the 
 advantages and disadvantages of each.
+
 1. Full Backup
 How it works:
+
 A full backup makes a complete copy of all data, files, and system states.
 It stores everything into a backup location at once.
+
 Advantages:
 a). Easiest to restore — everything is contained in a single backup file.
+
 b). Simple to manage and verify.
 
-2. Incremental Backup
-How it works
+3. Incremental Backup
+How it works:
+
 Backs up only the data that has changed since the last backup (either full or incremental).
 The first backup is a full backup, followed by incremental backups.
+
 Advantages:
 a). Faster and uses less storage after the initial full backup.
+
 b). Efficient for systems with frequent small changes.
+
 c). Minimizes backup time and system load.
 
 3.Differential Backup
 How it works:
+
 Backs up all changes made since the last full backup.
 Differs from incremental backups by always comparing against the last full backup, not the last backup of any type.
+
 Advantages:
 a). Faster restores than incremental backups because only the full backup and the latest differential are needed.
+
 b). Simpler than incremental in terms of management and recovery.
+
 c). Good balance between backup time and storage space.
 
 The Deployed API Endpoints from Assignment 1:
