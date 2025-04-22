@@ -4,23 +4,27 @@ To explain different backup schemes and how each is executed, including the
 advantages and disadvantages of each.
 
 1. Full Backup
+   
 How it works:
 
 A full backup makes a complete copy of all data, files, and system states.
 It stores everything into a backup location at once.
 
 Advantages:
+
 a). Easiest to restore — everything is contained in a single backup file.
 
 b). Simple to manage and verify.
 
 3. Incremental Backup
+   
 How it works:
 
 Backs up only the data that has changed since the last backup (either full or incremental).
 The first backup is a full backup, followed by incremental backups.
 
 Advantages:
+
 a). Faster and uses less storage after the initial full backup.
 
 b). Efficient for systems with frequent small changes.
@@ -28,12 +32,14 @@ b). Efficient for systems with frequent small changes.
 c). Minimizes backup time and system load.
 
 3.Differential Backup
+
 How it works:
 
 Backs up all changes made since the last full backup.
 Differs from incremental backups by always comparing against the last full backup, not the last backup of any type.
 
 Advantages:
+
 a). Faster restores than incremental backups because only the full backup and the latest differential are needed.
 
 b). Simpler than incremental in terms of management and recovery.
@@ -80,7 +86,9 @@ Cron Job Setup
 This repository contains a Django REST API that provides student and subject information for the CS 421 assignment.
 
 ## API Endpoints
+
 http://ec2-54-175-59-76.compute-1.amazonaws.com/api/students/ - Returns a list of 10 students with their names and enrolled programs.
+
 http://ec2-54-175-59-76.compute-1.amazonaws.com/api/subjects/ - Returns all subjects for the Software Engineering program grouped by academic year.
 
 ## Requirements
