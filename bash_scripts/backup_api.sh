@@ -1,4 +1,4 @@
-#!/bin/bash 
+#!/bin/bash
 
 # Define variables
 LOG_FILE="/home/ubuntu/cs421_assignment/logs/backup.log"
@@ -23,7 +23,6 @@ if [ ! -d "$API_DIR" ]; then
     log "ERROR: API directory $API_DIR does not exist"
     exit 1
 fi
-
 # Backup API directory
 API_BACKUP_FILE="$BACKUP_DIR/api_backup_$(date +%F).tar.gz"
 if tar -czf "$API_BACKUP_FILE" -C "$(dirname "$API_DIR")" "$(basename "$API_DIR")" 2>> "$LOG_FILE"; then
@@ -39,7 +38,7 @@ if command -v pg_dump >/dev/null 2>&1; then
     # Read password securely
     read -s -p "Enter PostgreSQL password for $DB_USER: " DB_PASS
     echo
-    
+
     if PGPASSWORD="$DB_PASS" pg_dump -U "$DB_USER" -d "$DB_NAME" > "$DB_BACKUP_FILE" 2>> "$LOG_FILE"; then
         log "Database backup created: $DB_BACKUP_FILE"
     else
@@ -51,7 +50,6 @@ if command -v pg_dump >/dev/null 2>&1; then
 else
     log "WARNING: pg_dump not found. Skipping database backup."
 fi
-
 # Clean up old backups (older than 7 days)
 find "$BACKUP_DIR" -name "api_backup_*.tar.gz" -mtime +7 -delete 2>> "$LOG_FILE"
 find "$BACKUP_DIR" -name "db_backup_*.sql" -mtime +7 -delete 2>> "$LOG_FILE"

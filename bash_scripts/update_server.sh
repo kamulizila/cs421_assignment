@@ -25,14 +25,13 @@ log "Starting server update process"
 
 # Update package list
 log "Updating package lists"
-if ! apt update >> "$LOG_FILE" 2>&1; then
+if ! sudo apt update >> "$LOG_FILE" 2>&1; then
     log "ERROR: Failed to update package lists"
     exit 1
 fi
-
 # Upgrade packages
 log "Upgrading system packages"
-if ! apt upgrade -y >> "$LOG_FILE" 2>&1; then
+if ! sudo apt upgrade -y >> "$LOG_FILE" 2>&1; then
     log "ERROR: Failed to upgrade packages"
     exit 1
 fi
@@ -47,7 +46,8 @@ cd "$API_DIR" || {
     exit 1
 }
 
-if ! git pull >> "$LOG_FILE" 2>&1; then
+# Automatically merge changes during git pull
+if ! git pull --no-rebase >> "$LOG_FILE" 2>&1; then
     log "ERROR: Failed to update GitHub repository"
     exit 1
 fi
@@ -59,7 +59,7 @@ if systemctl is-active --quiet apache2; then
     if ! systemctl restart apache2 >> "$LOG_FILE" 2>&1; then
         log "ERROR: Failed to restart Apache"
         exit 1
-    fi
+         fi
     log "Apache restarted successfully"
 elif systemctl is-active --quiet nginx; then
     if ! systemctl restart nginx >> "$LOG_FILE" 2>&1; then
