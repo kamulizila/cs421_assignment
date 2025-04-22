@@ -1,5 +1,5 @@
 # CS 421 Assignment 2 - Bash Scripts for Server Management
-The Deployed API Endpoints from Assignment 1
+The Deployed API Endpoints from Assignment 1:
 http://ec2-54-175-59-76.compute-1.amazonaws.com/api/students/ - Returns a list of 10 students with their names and enrolled programs.
 http://ec2-54-175-59-76.compute-1.amazonaws.com/api/subjects/ - Returns all subjects for the Software Engineering program grouped by academic year.
 
@@ -60,9 +60,8 @@ c). Good balance between backup time and storage space.
 This repository contains a Django REST API that provides student and subject information for the CS 421 assignment.
 
 ## API Endpoints
-
-1. `http://ec2-54-175-59-76.compute-1.amazonaws.com/api/students/` - Returns a list of 10 students with their names and enrolled programs.
-2. `http://ec2-54-175-59-76.compute-1.amazonaws.com/api/subjects/` - Returns all subjects for the Software Engineering program grouped by academic year.
+http://ec2-54-175-59-76.compute-1.amazonaws.com/api/students/ - Returns a list of 10 students with their names and enrolled programs.
+http://ec2-54-175-59-76.compute-1.amazonaws.com/api/subjects/ - Returns all subjects for the Software Engineering program grouped by academic year.
 
 ## Requirements
 1. `pytest==7.4.0`
