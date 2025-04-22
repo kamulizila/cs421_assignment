@@ -1,11 +1,16 @@
 # CS 421 Assignment 2 - Bash Scripts for Server Management
 The Deployed API Endpoints from Assignment 1:
 http://ec2-54-175-59-76.compute-1.amazonaws.com/api/students/ - Returns a list of 10 students with their names and enrolled programs.
+
 http://ec2-54-175-59-76.compute-1.amazonaws.com/api/subjects/ - Returns all subjects for the Software Engineering program grouped by academic year.
 
+
 Cron Job Setup
+
 0 */6 * * * | /home/ubuntu/cs421_assignment/bash_scripts/health_check.sh -> Runs every 6 hours to log server health
+
 0 2 * * * | /home/ubuntu/cs421_assignment/bash_scripts/backup_api.sh -> Runs daily at 2:00 AM to backup the API
+
 0 3 */3 * * | /home/ubuntu/cs421_assignment/bash_scripts/update_server.sh -> Runs every 3 days at 3:00 AM to update packages
 
 ### Scripts Overview
