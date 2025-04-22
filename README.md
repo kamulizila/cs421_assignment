@@ -16,7 +16,7 @@ a). Easiest to restore — everything is contained in a single backup file.
 
 b). Simple to manage and verify.
 
-3. Incremental Backup
+2. Incremental Backup
    
 How it works:
 
