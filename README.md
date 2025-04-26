@@ -23,9 +23,9 @@ docker-compose up -d
 
 docker inspect --format='{{json .State.Health}}' cs421_assignment_web
 
-##pull instructions
+#pull instructions
 
-# Docker Images
+## Docker Images
 
 docker pull kamulizila/cs421_assignment-web:latest
 
