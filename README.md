@@ -45,10 +45,15 @@ docker-compose exec web curl http://localhost:8000/api/students/
 docker-compose up -d --build
 ## Deployment
 - API URL:http://ec2-44-204-28-95.compute-1.amazonaws.com/api/students/
+  
 - API URL:http://ec2-44-204-28-95.compute-1.amazonaws.com/api/subjects/
-- Docker Images: 
+  
+- Docker Images:
+  
   docker pull kamulizila/cs421_assignment-web:latest
+  
   docker pull kamulizila/cs421_assignment-db:latest
+  
 # Run manually to see errors
 
 docker-compose exec web gunicorn cs421_assignment.wsgi:application --bind 0.0.0.0:8000
