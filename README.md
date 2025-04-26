@@ -27,7 +27,8 @@ docker inspect --format='{{json .State.Health}}' cs421_assignment_web
 # Manually test endpoint
 
 docker-compose exec web curl http://localhost:8000/health/
-
+docker-compose exec web curl http://localhost:8000/api/subjects/
+docker-compose exec web curl http://localhost:8000/api/students/
 
 # CS 421 Assignment 2 - Bash Scripts for Server Management
 
