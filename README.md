@@ -24,6 +24,14 @@ docker-compose up -d
 
 docker inspect --format='{{json .State.Health}}' cs421_assignment_web
 
+#pull instructions
+
+## Docker Images
+
+docker pull kamulizila/cs421_assignment-web:latest
+
+docker pull kamulizila/cs421_assignment-db:latest
+
 # Manually test endpoint
 
 docker-compose exec web curl http://localhost:8000/health/
