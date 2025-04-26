@@ -1,4 +1,3 @@
-# Use an official Python runtime as a parent image
 FROM python:3.10-slim
 
 # Install system dependencies required for psycopg2 and other packages
@@ -16,7 +15,7 @@ ENV PYTHONUNBUFFERED=1
 ENV PYTHONPATH=/app
 ENV DJANGO_SETTINGS_MODULE=cs421_assignment.settings
 
-# Set the working directory in the container
+# To Set the working directory in the container
 WORKDIR /app
 
 # Copy and install Python dependencies first (for better layer caching)
@@ -31,7 +30,7 @@ COPY . .
 RUN python -c "import django; print(f'Django {django.__version__} installed successfully')" && \
     python -c "import sys; print(f'Python path: {sys.path}')"
 
-# Create necessary Django directories (if needed)
+
 RUN mkdir -p /app/static /app/media
 
 # Ensure proper permissions
