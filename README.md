@@ -57,7 +57,8 @@ docker-compose up -d --build
 # Run manually to see errors
 
 docker-compose exec web gunicorn cs421_assignment.wsgi:application --bind 0.0.0.0:8000
-
+#URL of the Docker registry link to view images:
+https://hub.docker.com/u/kamulizila/
 # CS 421 Assignment 2 - Bash Scripts for Server Management
 
 To explain different backup schemes and how each is executed, including the 
