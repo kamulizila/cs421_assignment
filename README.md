@@ -1,21 +1,33 @@
 # CS 421 Assignment 3 -  Docker Containerization
-## 🐳 Docker Setup
+## Docker Setup
 
 ### Build Images
 bash
 docker-compose build
 ### Start Services
 bash
-docker-compose up -d  # Detached mode
+docker-compose up -d
 
 # View logs
 docker-compose logs -f web
-## 🔧 Troubleshooting
+## Troubleshooting
 
 ### Database Connection Issues
-bash
 # Test database connection
 docker-compose exec web python manage.py dbshell
+# Reset database
+
+docker-compose down -v
+
+docker-compose up -d
+# Check container health
+
+docker inspect --format='{{json .State.Health}}' cs421_assignment_web
+
+# Manually test endpoint
+
+docker-compose exec web curl http://localhost:8000/health/
+
 
 # CS 421 Assignment 2 - Bash Scripts for Server Management
 
