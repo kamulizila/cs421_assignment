@@ -1,3 +1,22 @@
+# CS 421 Assignment 3 -  Docker Containerization
+## 🐳 Docker Setup
+
+### Build Images
+bash
+docker-compose build
+### Start Services
+bash
+docker-compose up -d  # Detached mode
+
+# View logs
+docker-compose logs -f web
+## 🔧 Troubleshooting
+
+### Database Connection Issues
+bash
+# Test database connection
+docker-compose exec web python manage.py dbshell
+
 # CS 421 Assignment 2 - Bash Scripts for Server Management
 
 To explain different backup schemes and how each is executed, including the 
