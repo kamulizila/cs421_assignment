@@ -1,3 +1,67 @@
+# CS 421 Assignment 3 -  Docker Containerization
+# Manually test endpoint
+
+docker-compose exec web curl http://localhost:8000/health/
+
+docker-compose exec web curl http://localhost:8000/api/subjects/
+
+docker-compose exec web curl http://localhost:8000/api/students/
+#### **4. AWS Deployment Guide**
+## AWS Deployment
+
+1. Launch EC2 Ubuntu 22.04 instance
+
+2. Install Docker & Docker Compose
+
+3. Clone this repo
+
+4. Configure .env file
+
+5. Start with:
+docker-compose up -d --build
+## Deployment
+- API URL:http://ec2-44-204-28-95.compute-1.amazonaws.com/api/students/
+  
+- API URL:http://ec2-44-204-28-95.compute-1.amazonaws.com/api/subjects/
+  
+- Docker Images:
+  
+  docker pull kamulizila/cs421_assignment-web:latest
+  
+  docker pull kamulizila/cs421_assignment-db:latest
+  
+## Run manually to see errors
+
+docker-compose exec web gunicorn cs421_assignment.wsgi:application --bind 0.0.0.0:8000
+
+## URL of the Docker registry link to view images:
+https://hub.docker.com/u/kamulizila/
+
+## Docker Setup
+
+### Build Images
+docker-compose build
+### Start Services
+bash
+docker-compose up -d
+
+# View logs
+docker-compose logs -f web
+## Troubleshooting
+
+### Database Connection Issues
+# Test database connection
+docker-compose exec web python manage.py dbshell
+# Reset database
+
+docker-compose down -v
+
+docker-compose up -d
+# Check container health
+
+docker inspect --format='{{json .State.Health}}' cs421_assignment_web
+
+
 # CS 421 Assignment 2 - Bash Scripts for Server Management
 
 To explain different backup schemes and how each is executed, including the 
