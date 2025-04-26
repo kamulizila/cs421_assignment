@@ -54,10 +54,11 @@ docker-compose up -d --build
   
   docker pull kamulizila/cs421_assignment-db:latest
   
-# Run manually to see errors
+## Run manually to see errors
 
 docker-compose exec web gunicorn cs421_assignment.wsgi:application --bind 0.0.0.0:8000
-#URL of the Docker registry link to view images:
+
+## URL of the Docker registry link to view images:
 https://hub.docker.com/u/kamulizila/
 # CS 421 Assignment 2 - Bash Scripts for Server Management
 
